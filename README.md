@@ -262,7 +262,7 @@ Here's the route we will be using:
 ### Steps we will follow in this iteration:
 
 1. We need `/:id` part to change dynamically as we click on different movies' titles. This being said, as part of the loop that displays each movie's title, add a link that goes to the `/movies/:id` route with the `:id` replaced by the actual movie's id 🔑
-2. Create the `/:id` GET route in `routes/movies.routes.js`.
+2. Create the `/:id` GET route in `routes/movies.js`.
 3. In the route:
    - On the `Movie` model call the `findOne()` or `findById()` method to retrieve the details of a specific movie by its `id`
      - Don't forget you have `cast` as the array of celebrity `id`s, and we need to `populate()` in order to get the full data about the celebrities 🎯
