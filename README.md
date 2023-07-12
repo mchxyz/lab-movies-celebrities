@@ -79,7 +79,7 @@ In order to have everything organized, we will first create a couple of folders 
 - **Routes**: In our `routes` folder, let's create separate files for our **celebrities** and **movies**. The naming is up to you, but we will use the following: `routes/celebrities.js` and `routes/movies.js`. You can add below starter router code to both of them and remember to link these two new files and declare their routers in `app.js` so your server has access to them.
 
 ```js
-// starter code in both routes/celebrities.routes.js and routes/movies.routes.js
+// starter code in both routes/celebrities.js and routes/movies.js
 const router = require("express").Router();
 
 // all your routes here
