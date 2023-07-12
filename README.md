@@ -76,7 +76,7 @@ Run the app and you are ready to start 🚀
 
 In order to have everything organized, we will first create a couple of folders and files.
 
-- **Routes**: In our `routes` folder, let's create separate files for our **celebrities** and **movies**. The naming is up to you, but we will use the following: `routes/celebrities.routes.js` and `routes/movies.routes.js`. You can add below starter router code to both of them and remember to link these two new files and declare their routers in `app.js` so your server has access to them.
+- **Routes**: In our `routes` folder, let's create separate files for our **celebrities** and **movies**. The naming is up to you, but we will use the following: `routes/celebrities.js` and `routes/movies.js`. You can add below starter router code to both of them and remember to link these two new files and declare their routers in `app.js` so your server has access to them.
 
 ```js
 // starter code in both routes/celebrities.routes.js and routes/movies.routes.js
@@ -111,7 +111,7 @@ The `Celebrity` model should have:
 - `occupation` - String (what the celebrity does, why they are famous. For example _actor, singer, comedian_, or you can put _unknown_ if your celebrity is someone like Kim Kardashian)
 - `catchPhrase` - String (every celebrity needs a good catchphrase. Well maybe not all of them have one in real life, but all of _our_ celebrities will have a catchphrase. This can be pretty much anything.)
 
-Go ahead and locate the `Celebrity.model.js` model file in the `models` folder. Using schema, create the `Celebrity` model with the above-mentioned properties. _Don't forget to export the model._ 2. In the `Celebrity.model.js` model file:
+Go ahead and locate the `Celebrity.js` model file in the `models` folder. Using schema, create the `Celebrity` model with the above-mentioned properties. _Don't forget to export the model._ 2. In the `Celebrity.js` model file:
 
 <br>
 
@@ -130,17 +130,17 @@ Now that we have defined _Celebrity_ model, let's make it so the user can **add 
 
 ### Steps we will follow in this iteration:
 
-1. In the routes file (`routes/celebrities.routes.js`) create the following GET route: `/create`
+1. In the routes file (`routes/celebrities.js`) create the following GET route: `/create`
 2. In that route we have to render the `/new-celebrity` view
 3. In that view file:
    - Add an `<h2>` for the page's heading.
    - Add a `<form>` tag that makes a POST request to `/create`.
    - Add `<input>` tags inside the form so the user can fill in values for each attribute of the celebrity. Make an input for `name`, `occupation`, and `catchPhrase`
    - Add a `<button>` tag in the form so the user can submit the form once they are done filling it out.
-4. Create the `/create` POST route in `routes/celebrities.routes.js`.
+4. Create the `/create` POST route in `routes/celebrities.js`.
 5. In that route we have to **create** an instance of the `Celebrity` model (don't forget, we should get all the info from the form through _req.body_)
    - If there is an error, render the `/new-celebrity` view so the user can try again and
-   - If there is no error, redirect to the page with the list of celebrities. This route will be created in the next iteration of `routes/celebrities.routes.js`
+   - If there is no error, redirect to the page with the list of celebrities. This route will be created in the next iteration of `routes/celebrities.js`
 6. In the `views/index.hbs` view file:
    - Add a link that goes to the page you just created with the form to create a new celebrity.
 
@@ -162,7 +162,7 @@ Here's the route we will be using:
 
 ### Steps we will follow in this iteration:
 
-1. Create the `/celebrities` GET route in `routes/celebrities.routes.js`.
+1. Create the `/celebrities` GET route in `routes/celebrities.js`.
 2. In the route:
    - Use `find()` method on the `Celebrity` model to retrieve all the celebrities
    - If everything is okay, render the `celebrities/celebrities.hbs` view and pass the array of celebrities into the view as a variable
@@ -292,7 +292,7 @@ Now that we have a list of movies, a movie details page, and a page to create ne
 1. In the `movies/movie-details.hbs` file:
    - Add a `<form>` tag that makes a POST request to `/:id/delete` where the `:id` is replaced by the actual `id` of the movie.
    - Add a `<button>` tag inside the form so that it can be submitted.
-2. Create the `/:id/delete` POST route in your `routes/movies.routes.js` file
+2. Create the `/:id/delete` POST route in your `routes/movies.js` file
 3. In the route:
    - Use the `Movie` model's `findByIdAndRemove()` method to delete the specific movie by its `id`.
    - If everything is good (`.then()`), redirect to the list of movies page
@@ -317,7 +317,7 @@ Here are the routes we will be using:
 
 ### Steps we will follow in this iteration:
 
-1. Create the `/:id/edit` GET route in `routes/movies.routes.js`.
+1. Create the `/:id/edit` GET route in `routes/movies.js`.
 2. In that route:
    - Call the `Movie` model’s `findOne()` or `findById()` method to retrieve a specific movie by its _id_
    - Call the `Celebrity` model's `find()` to retrieve all celebrities for the cast.
@@ -331,7 +331,7 @@ Here are the routes we will be using:
    - Add `<select>` and `<option>` tags that will handle the cast attribute.
    - **BONUS**: Make the current cast members _selected_ so the user knows who is in the cast currently.
    - Add a `<button>` tag inside the form so that the user can submit the form once they are done editing.
-4. Create a `/:id` POST route in the `routes/movies.routes.js` file
+4. Create a `/:id` POST route in the `routes/movies.js` file
 5. In that route:
    - Create an object with the movie's model keys and its values should come from the form submission (which is `req.body`)
    - Now you can apply different methods - `update()` or `findByIdAndUpdate()` to find the movie and send the updated values to the database.
