@@ -141,8 +141,8 @@ Now that we have defined _Celebrity_ model, let's make it so the user can **add 
 5. In that route we have to **create** an instance of the `Celebrity` model (don't forget, we should get all the info from the form through _req.body_)
    - If there is an error, render the `/new-celebrity` view so the user can try again and
    - If there is no error, redirect to the page with the list of celebrities. This route will be created in the next iteration of `routes/celebrities.js`
-6. In the `views/index.hbs` view file:
-   - Add a link that goes to the page you just created with the form to create a new celebrity.
+6. In the `views/layout.hbs` view file:
+   - Create a Navbar that has a link to an address that will respond with the page you just created with the form to create a new celebrity.
 
 <br>
 
@@ -170,7 +170,7 @@ Here's the route we will be using:
 3. In the `views/celebrities/celebrities.hbs` view file:
    - Add an `<h2>` tag for the page's heading.
    - Use an hbs `#each` loop to display tags with each celebrity's `name`.
-4. In the `views/index.hbs` (homepage) file:
+4. In the `views/layout.hbs` (layout) file:
    - Add a link that goes to the `/celebrities` route.
 
 <br>
@@ -219,7 +219,7 @@ Review how you did this for the `Celebrity` model.
 - Make sure the form is making a POST request to the other route you just created (`/movies/create`)
 - In your post route, create an object with all the info you just received from the form. (Remember, `req.body`)
 - Use this object to create a new movie in the database and redirect back to the page with your list of all movies
-- Make sure to add a link to the form on the movies index page so the user can easier navigate
+- Make sure to add a link to the form in the Navbar so the user can navigate more easily.
 
 ## Iteration #7: Listing Our Movies
 
